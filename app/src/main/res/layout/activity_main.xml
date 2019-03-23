@@ -7,12 +7,150 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/calc_last_operation_tv"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Last operation"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/calc_result_tv"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:text="Result"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calc_second_operand_et"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_equality"
+        app:layout_constraintTop_toTopOf="@+id/calc_second_operand_et"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/calc_btn_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/calc_btn_minus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_first_operand_et" />
+
+    <Button
+        android:id="@+id/calc_btn_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/calc_btn_plus"
+        app:layout_constraintEnd_toStartOf="@+id/calc_btn_multiplication"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_btn_plus"
+        app:layout_constraintTop_toTopOf="@+id/calc_btn_plus" />
+
+    <Button
+        android:id="@+id/calc_btn_multiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        app:layout_constraintBottom_toBottomOf="@+id/calc_btn_minus"
+        app:layout_constraintEnd_toStartOf="@+id/calc_btn_divide"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_btn_minus"
+        app:layout_constraintTop_toTopOf="@+id/calc_btn_minus" />
+
+    <Button
+        android:id="@+id/calc_btn_divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        app:layout_constraintBottom_toBottomOf="@+id/calc_btn_multiplication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_btn_multiplication"
+        app:layout_constraintTop_toTopOf="@+id/calc_btn_multiplication" />
+
+    <Button
+        android:id="@+id/calc_btn_reset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_plus" />
+
+    <EditText
+        android:id="@+id/calc_first_operand_et"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/calc_operation_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_last_operation_tv" />
+
+    <EditText
+        android:id="@+id/calc_second_operand_et"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/calc_first_operand_et"
+        app:layout_constraintEnd_toStartOf="@+id/calc_equality"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_operation_tv"
+        app:layout_constraintTop_toTopOf="@+id/calc_first_operand_et"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/calc_btn_equality"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="="
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/calc_btn_reset"
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_multiplication" />
+
+    <TextView
+        android:id="@+id/calc_operation_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/calc_first_operand_et"
+        app:layout_constraintEnd_toStartOf="@+id/calc_second_operand_et"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_first_operand_et"
+        app:layout_constraintTop_toTopOf="@+id/calc_first_operand_et" />
+
+    <TextView
+        android:id="@+id/calc_equality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="@+id/calc_result_tv"
+        app:layout_constraintEnd_toStartOf="@+id/calc_result_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc_second_operand_et"
+        app:layout_constraintTop_toTopOf="@+id/calc_result_tv"
+        app:layout_constraintVertical_bias="0.545" />
 </android.support.constraint.ConstraintLayout>
