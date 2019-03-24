@@ -1,5 +1,7 @@
 package com.example.lesson_19_unit_test;
 
+import android.support.annotation.VisibleForTesting;
+
 public class Calculator {
 
     public static final int OPERATION_PLUS = 10;
@@ -42,6 +44,7 @@ public class Calculator {
         return result;
     }
 
+    @VisibleForTesting
     private float divide(float firstOperand, float secondOperand) {
         float result = firstOperand / secondOperand;
         lastOperation = firstOperand + " / " + secondOperand;
