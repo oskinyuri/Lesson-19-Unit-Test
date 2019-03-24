@@ -67,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
         mHandler = new Handler(Looper.getMainLooper());
         mExecutorService = Executors.newSingleThreadScheduledExecutor();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
         mDatabase = Room.databaseBuilder(this, OperationDatabase.class, OPERATION_DATABASE)
                 .fallbackToDestructiveMigration()
                 .build();
@@ -156,6 +160,12 @@ public class MainActivity extends AppCompatActivity {
             mOperation.setOperation(mCalculator.getLastOperation());
             addOperationsInBD(mOperation);
         }));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mDatabase.close();
     }
 
     /**
